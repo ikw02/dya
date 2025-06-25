@@ -118,6 +118,16 @@ mmmmmmmm#include <behaviors/mouse_move.dtsi>
             #binding-cells = <1>;
             bindings = <&macro_param_1to1 &tog_off MACRO_PLACEHOLDER &macro_param_1to1 &mo MACRO_PLACEHOLDER>;
         };
+        cmd_shift_t: cmd_shift_t {
+            compatible = "zmk,behavior-macro"; // マクロであることを示す必須プロパティ
+            #binding-cells = <0>;           // このマクロは引数を取らないことを示す
+            wait-ms = <0>;                  // 各キー操作間の待機時間（ミリ秒）。通常0で問題ありません
+
+            // CmdキーとShiftキーを押しながらTを押し、その後CmdとShiftを離す
+            // ZMKは通常、&kpでモディファイアとキーを組み合わせた場合、自動でモディファイアを離しますが、
+            // 明示的に&kp UP_XXX で離すことで、より確実な動作が期待できます。
+            bindings = <&kp LCMD &kp LSHIFT &kp T &kp UP_LCMD &kp UP_LSHIFT>;
+        };
     };
 
     combos {
@@ -236,7 +246,7 @@ mmmmmmmm#include <behaviors/mouse_move.dtsi>
             bindings = <
 &kp ESC    &kp EXCL      &kp AT      &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp RBKT
 &kp SLASH  &kp N1        &kp N2      &kp N3    &kp N4    &kp N5        &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp BACKSLASH
-&kp LSHIFT &kp LG(LS(T))        &trans      &kp BSPC  &kp BACKSPACE  &kp LS(F2)        &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp RSHIFT
+&kp LSHIFT &cmd_shift_t  &trans      &kp BSPC  &kp BACKSPACE  &kp LS(F2)        &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp RSHIFT
            &trans        &trans      &trans    &trans    &mo CONFIG_L  &trans     &trans     &trans     &trans
 &trans     &trans                                                      &trans     &trans     &trans     &trans
 &trans     &trans        &trans      &trans                            &none      &none      &trans     &trans
