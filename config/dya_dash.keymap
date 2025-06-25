@@ -191,10 +191,10 @@
         mac_default_layer {
             display-name = "Mac Default";
             bindings = <
-&trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
-        &trans  &kp LALT  &mt LCMD LANG2  &trans  &mt LCMD LANG2  &mt RCMD LANG1  &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
+        &trans  &kp LALT  &kp LCMD  &trans  &mt LCMD LANG2  &mt RCMD LANG1  &trans  &trans  &trans
 &trans  &trans                                                    &trans          &trans  &trans  &trans
 &trans  &trans  &trans    &trans                                  &trans          &trans  &trans  &trans
             >;
@@ -234,12 +234,12 @@
             //           |     |     |          |     |          |                           |     |         |         |     |
 
             bindings = <
-&kp ESC  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp RBKT
-&trans   &kp N1    &kp N2  &kp N3    &kp N4    &kp N5        &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp BACKSLASH
-&trans   &trans    &trans  &trans    &trans    &trans        &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp RSHIFT
-         &trans    &trans  &trans    &trans    &mo CONFIG_L  &trans     &trans     &trans     &trans
-&trans   &trans                                              &trans     &trans     &trans     &trans
-&trans   &trans    &trans  &trans                            &none      &none      &trans     &trans
+&kp ESC    &kp EXCL      &kp AT      &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp RBKT
+&kp SLASH  &kp N1        &kp N2      &kp N3    &kp N4    &kp N5        &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp BACKSLASH
+&kp LSHIFT &kp LG(LS(T)) &kp LG(W)   &kp BSCP  &kp BSCP  &kp LS(F2)    &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp RSHIFT
+           &trans        &trans      &trans    &trans    &mo CONFIG_L  &trans     &trans     &trans     &trans
+&trans     &trans                                                      &trans     &trans     &trans     &trans
+&trans     &trans        &trans      &trans                            &none      &none      &trans     &trans
             >;
         };
 
