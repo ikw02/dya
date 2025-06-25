@@ -1,4 +1,4 @@
-mmmmmmmm#include <behaviors/mouse_move.dtsi>
+#include <behaviors/mouse_move.dtsi>
 #include <behaviors/animation_control.dtsi>
 #include <behaviors/animation_trigger.dtsi>
 #include <dt-bindings/zmk/mouse.h>
