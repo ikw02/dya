@@ -128,6 +128,26 @@
             // 明示的に&kp UP_XXX で離すことで、より確実な動作が期待できます。
             bindings = <&kp LCMD &kp LSHIFT &kp T>;
         };
+        cmd_shift_3: cmd_shift_3 {
+            compatible = "zmk,behavior-macro"; // マクロであることを示す必須プロパティ
+            #binding-cells = <0>;           // このマクロは引数を取らないことを示す
+            wait-ms = <0>;                  // 各キー操作間の待機時間（ミリ秒）。通常0で問題ありません
+
+            // CmdキーとShiftキーを押しながらTを押し、その後CmdとShiftを離す
+            // ZMKは通常、&kpでモディファイアとキーを組み合わせた場合、自動でモディファイアを離しますが、
+            // 明示的に&kp UP_XXX で離すことで、より確実な動作が期待できます。
+            bindings = <&kp RCMD &kp RSHIFT &kp 3>;
+        };
+        cmd_shift_4: cmd_shift_4 {
+            compatible = "zmk,behavior-macro"; // マクロであることを示す必須プロパティ
+            #binding-cells = <0>;           // このマクロは引数を取らないことを示す
+            wait-ms = <0>;                  // 各キー操作間の待機時間（ミリ秒）。通常0で問題ありません
+
+            // CmdキーとShiftキーを押しながらTを押し、その後CmdとShiftを離す
+            // ZMKは通常、&kpでモディファイアとキーを組み合わせた場合、自動でモディファイアを離しますが、
+            // 明示的に&kp UP_XXX で離すことで、より確実な動作が期待できます。
+            bindings = <&kp RCMD &kp RSHIFT &kp 3>;
+        };
     };
 
     combos {
@@ -258,7 +278,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans        &kp PG_UP     &kp UP        &kp PG_DN  &trans  &kp C_AL_LOCK
 &trans  &trans  &trans  &trans  &trans  &trans  &trans        &kp LEFT      &kp DOWN      &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &cmd_shift_3     &cmd_shift_4  &RCTRL
         &trans  &trans  &trans  &trans  &trans  &mo CONFIG_L  &trans        &trans        &trans
 &trans  &trans                                  &trans        &trans        &trans        &trans
 &trans  &trans  &trans  &trans                  &none         &none         &trans        &trans
@@ -294,7 +314,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT  &trans  &trans  &trans
         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans                                  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans
