@@ -118,7 +118,7 @@
             #binding-cells = <1>;
             bindings = <&macro_param_1to1 &tog_off MACRO_PLACEHOLDER &macro_param_1to1 &mo MACRO_PLACEHOLDER>;
         };
-        cmd_shift_t: cmd_shift_t {
+        /*cmd_shift_t: cmd_shift_t {
             compatible = "zmk,behavior-macro"; // マクロであることを示す必須プロパティ
             #binding-cells = <0>;           // このマクロは引数を取らないことを示す
             wait-ms = <0>;                  // 各キー操作間の待機時間（ミリ秒）。通常0で問題ありません
@@ -127,7 +127,7 @@
             // ZMKは通常、&kpでモディファイアとキーを組み合わせた場合、自動でモディファイアを離しますが、
             // 明示的に&kp UP_XXX で離すことで、より確実な動作が期待できます。
             bindings = <&kp LCMD &kp LSHIFT &kp T &kp UP_LCMD &kp UP_LSHIFT>;
-        };
+        };*/
     };
 
     combos {
