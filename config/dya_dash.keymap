@@ -246,7 +246,7 @@
             bindings = <
 &kp ESC    &kp EXCL      &kp AT      &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp RBKT
 &kp SLASH  &kp N1        &kp N2      &kp N3    &kp N4    &kp N5        &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp BACKSLASH
-&kp LSHIFT &cmd_shift_t  &trans      &kp BSPC  &kp BACKSPACE  &kp LS(F2)        &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp RSHIFT
+&kp LSHIFT &cmd_shift_t  &kp LG(W)   &kp BSPC  &kp BACKSPACE  &kp LS(F2)        &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp RSHIFT
            &trans        &trans      &trans    &trans    &mo CONFIG_L  &trans     &trans     &trans     &trans
 &trans     &trans                                                      &trans     &trans     &trans     &trans
 &trans     &trans        &trans      &trans                            &none      &none      &trans     &trans
