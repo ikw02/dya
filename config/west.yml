@@ -3,15 +3,22 @@ manifest:
   defaults:
     remote: cormoran
     revision: main
+
   remotes:
     - name: cormoran
       url-base: https://github.com/cormoran
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+
   projects:
     - name: zmk
+      remote: zmkfirmware  # ← ここを変更
+      revision: main        # ← 最新ブランチを使用
       import:
         file: app/west.yml
         path-prefix: external
       clone-depth: 1
+
     - name: zmk-pmw3610-driver
       path: external/zmk-pmw3610-driver
       clone-depth: 1
@@ -24,5 +31,6 @@ manifest:
     - name: zmk-driver-ext-power-transient
       path: external/zmk-driver-ext-power-transient
       clone-depth: 1
+
   self:
     path: config
