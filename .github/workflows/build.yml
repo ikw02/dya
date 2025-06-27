@@ -46,8 +46,8 @@ jobs:
       - name: Save config and DTS for debugging
         run: |
           mkdir -p build/debug
-          cp build/zephyr/.config build/debug/
-          cp build/zephyr/zephyr.dts build/debug/
+          find build -type f -path "*/zephyr/.config" -exec cp --parents {} build/debug/ \;
+          find build -type f -path "*/zephyr/zephyr.dts" -exec cp --parents {} build/debug/ \;
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
