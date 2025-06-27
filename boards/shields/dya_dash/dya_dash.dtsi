@@ -137,7 +137,7 @@
         // input-processors = <&zip_temp_layer 8 500>;
         trackball_scroller: scroller_0 {
             // layers = <9>;
-            input-processors = <&zip_xy_scaler 1 90 &zip_xy_to_scroll_mapper>;
+            input-processors = <&zip_xy_scaler 1 150 &zip_xy_to_scroll_mapper>;
         };
     };
     // Enabled by default to support trackball on peripheral side.
