@@ -42,7 +42,7 @@
 };
 
 
-#define U_MOUSE_SCROLL_MAX 100  // 新しい最大スクロール速度設定（デフォルトは10）
+#define U_MOUSE_SCROLL_MAX 300  // 新しい最大スクロール速度設定（デフォルトは10）
 #undef SCROLL_UP
 #undef SCROLL_DOWN
 #undef SCROLL_LEFT
