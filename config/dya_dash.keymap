@@ -27,7 +27,7 @@
 #define EXT2_L 11
 #define EXT3_L 12
 
-#define U_MOUSE_MOVE_MAX 1400  // 新しい最大速度設定（デフォルトは600）
+#define U_MOUSE_MOVE_MAX 2000  // 新しい最大速度設定（デフォルトは600）
 #undef MOVE_UP
 #undef MOVE_DOWN
 #undef MOVE_LEFT
@@ -42,7 +42,7 @@
 };
 
 
-#define U_MOUSE_SCROLL_MAX 300  // 新しい最大スクロール速度設定（デフォルトは10）
+#define U_MOUSE_SCROLL_MAX 600  // 新しい最大スクロール速度設定（デフォルトは10）
 #undef SCROLL_UP
 #undef SCROLL_DOWN
 #undef SCROLL_LEFT
