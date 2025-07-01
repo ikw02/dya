@@ -7,7 +7,6 @@ on:
   pull_request:
   workflow_dispatch:
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,7 +16,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Cache west modules
         uses: actions/cache@v4
         continue-on-error: true
@@ -28,31 +26,20 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache_name }}-${{ hashFiles('**/west.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache_name }}-
-
       - name: Init
         run: |
           git config --global --add safe.directory ${{ github.workspace }}
           make init
-
       - name: Build
         run: make build-all -j6
-
       - name: Copy artifacts
         shell: sh -x {0}
         run: |
           mkdir -p build/artifacts
           cp -r build/*.uf2 build/artifacts/
 
-      - name: Save config and DTS for debugging
-        run: |
-          mkdir -p build/debug
-          find build -type f -path "*/zephyr/.config" -exec cp --parents {} build/debug/ \;
-          find build -type f -path "*/zephyr/zephyr.dts" -exec cp --parents {} build/debug/ \;
-
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
         with:
           name: artifact-dya-dash
-          path: |
-            build/artifacts
-            build/debug
+          path: build/artifacts
